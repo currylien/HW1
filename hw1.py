@@ -21,10 +21,9 @@ for i in range(5):
     mean = 0
     for j in range(len(target_data[i])):
             mean += target_data[i][j]
-    mean = mean / len(target_data[i])
-    if mean == 0:
+    if len(target_data[i]) == 0:
         answer.append([station_list[i], 'None'])
     else:
-        answer.append([station_list[i], mean])
+        answer.append([station_list[i], round((mean / len(target_data[i])), 2)])
 
 print(answer)
